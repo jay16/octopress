@@ -3,7 +3,7 @@ layout: post
 title: 常用命令
 date: 2013-09-01 06:33:58
 comments: true
-categories: CentOS,Shell
+categories: linux
 ---
 ## sqlserver 整数转化为浮点
 

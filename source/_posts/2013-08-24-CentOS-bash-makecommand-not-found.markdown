@@ -3,7 +3,7 @@ layout: post
 title: CentOS -bash - make -command not found
 date: 2013-08-24 16:47:30
 comments: true
-categories: 
+categories: other
 ---
 ## 起因
 

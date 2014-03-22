@@ -3,7 +3,7 @@ layout: post
 title: Kettle 使用简述
 date: 2013-10-26 23:34:15
 comments: true
-categories: 
+categories: other
 ---
 ## 简介
 

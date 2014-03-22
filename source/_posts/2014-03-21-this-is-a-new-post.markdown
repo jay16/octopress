@@ -3,7 +3,7 @@ layout: post
 title: 部署Octopress到你的VPS 
 date: 2014-03-21 08:07:04 -0400
 comments: true
-categories:  octopress,nginx,vps
+categories: code
 ---
 
 ## 准备工作

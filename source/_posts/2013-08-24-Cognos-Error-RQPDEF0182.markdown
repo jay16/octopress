@@ -3,7 +3,7 @@ layout: post
 title: Cognos Error - RQP-DEF-0182 
 date: 2013-08-24 17:39:16
 comments: true
-categories: Error,Cognos
+categories: error
 ---
 ## 报错信息
 

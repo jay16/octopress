@@ -3,7 +3,7 @@ layout: post
 title: Ruby - run_command(bash) & pid
 date: 2013-08-28 03:51:57
 comments: true
-categories: Ruby,FocusAgent,Shell
+categories: code
 ---
 ## run_command
 

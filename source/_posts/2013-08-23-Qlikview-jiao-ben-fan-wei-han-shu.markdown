@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 脚本范围函数
 date: 2013-08-23 02:40:06
 comments: true
-categories: BI,Qlikview
+categories: report
 ---
 范围函数将替代以下一般数字函数(第302 页)：numsum，numavg，numcount，nummin 和 nummax( 现在应被视为已过时) 。
 

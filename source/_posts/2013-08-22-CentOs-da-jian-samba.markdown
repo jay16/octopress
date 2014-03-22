@@ -3,7 +3,7 @@ layout: post
 title: CentOs 搭建samba
 date: 2013-08-22 05:39:07
 comments: true
-categories: Linux,Samba
+categories: linux
 ---
 > 搭建samba服务器端
 

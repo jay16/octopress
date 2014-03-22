@@ -3,7 +3,7 @@ layout: post
 title: ruby 代码风格
 date: 2013-09-14 09:57:07
 comments: true
-categories: Ruby
+categories: code
 ---
 ## 源代码风格
 

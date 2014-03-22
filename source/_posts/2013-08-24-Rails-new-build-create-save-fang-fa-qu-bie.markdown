@@ -3,7 +3,7 @@ layout: post
 title: Rails  - new, build, create, save方法区别
 date: 2013-08-24 16:54:39
 comments: true
-categories: 
+categories: other
 ---
 ## 概述
 

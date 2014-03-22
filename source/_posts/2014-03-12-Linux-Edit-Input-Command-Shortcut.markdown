@@ -3,7 +3,7 @@ layout: post
 title: Linux 命令快捷键
 date: 2014-03-12 14:55:41
 comments: true
-categories: Linux
+categories: linux
 ---
 ctrl+a 跳到行首
 

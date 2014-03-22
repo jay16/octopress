@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 聚合函数
 date: 2013-08-25 15:16:16
 comments: true
-categories: BI,Qlikview
+categories: report
 ---
 ***
 

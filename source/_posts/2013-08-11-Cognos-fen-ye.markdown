@@ -3,7 +3,7 @@ layout: post
 title: Cognos分页
 date: 2013-08-11 16:08:39
 comments: true
-categories: Cognos
+categories: report
 ---
   目前开发报表中cognos(10.1.1)分页主要针对列表,分两种情况:
 

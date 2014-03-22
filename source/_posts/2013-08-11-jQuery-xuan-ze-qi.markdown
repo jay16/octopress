@@ -3,7 +3,7 @@ layout: post
 title: jQuery 选择器
 date: 2013-08-11 16:08:39
 comments: true
-categories: JQuery
+categories: web
 ---
 | 选择器 |  实例 | 选取 |
 |--------|-------|------|

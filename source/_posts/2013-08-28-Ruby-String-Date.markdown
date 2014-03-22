@@ -3,7 +3,7 @@ layout: post
 title: Ruby  - String => Date
 date: 2013-08-28 03:42:56
 comments: true
-categories: Ruby,Time.parse
+categories: code
 ---
 时间字符串转化为时间类型
 

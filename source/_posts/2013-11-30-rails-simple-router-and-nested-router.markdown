@@ -3,7 +3,7 @@ layout: post
 title: rails router - 简单路由与嵌套路由
 date: 2013-11-30 18:46:00
 comments: true
-categories: Rails,router,Ruby
+categories: code
 ---
 使用rails搭建个人网站，功能杂，一不小心router代码就写的杂乱无章，想要优化router代码就要好好学习rails的router.
 

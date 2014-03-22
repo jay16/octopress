@@ -3,7 +3,7 @@ layout: post
 title: CentOS系统上使用RVM安装Rails
 date: 2014-01-23 12:38:14
 comments: true
-categories: Ruby
+categories: code
 ---
 ## 安装RVM
 

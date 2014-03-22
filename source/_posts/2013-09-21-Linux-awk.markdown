@@ -3,7 +3,7 @@ layout: post
 title: Linux awk
 date: 2013-09-21 18:42:01
 comments: true
-categories: 
+categories: other
 ---
 ## 内置变量
 

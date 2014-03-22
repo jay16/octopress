@@ -3,7 +3,7 @@ layout: post
 title: Ruby操作MySql的日期格式
 date: 2013-12-11 13:15:24
 comments: true
-categories: Ruby,MySql
+categories: code
 ---
 ## 起因
 

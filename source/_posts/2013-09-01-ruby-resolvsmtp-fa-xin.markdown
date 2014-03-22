@@ -3,7 +3,7 @@ layout: post
 title: ruby - resolv&smtp发信
 date: 2013-09-01 04:43:50
 comments: true
-categories: Email,Ruby
+categories: code
 ---
     #使用resolv与smtp发信
     [root@localhost ruby]# vi dns_002.rb 

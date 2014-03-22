@@ -3,7 +3,7 @@ layout: post
 title: rails router - 路由过滤
 date: 2013-11-30 21:39:08
 comments: true
-categories: Rails,router
+categories: code
 ---
 有时由于一些原因需要限制url链接中传过来的参数符合我们定制的规则，对参数的限制在路由配置时使用**constraints**关键定。
 

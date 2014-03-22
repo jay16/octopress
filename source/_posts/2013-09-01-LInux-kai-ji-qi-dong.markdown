@@ -3,7 +3,7 @@ layout: post
 title: LInux 开机启动
 date: 2013-09-01 05:42:29
 comments: true
-categories: Linux,开机启动
+categories: linux
 ---
 
 设置某些服务或程序开机启动，以避免服务器莫名关机或重启后还要人工手动启动

@@ -3,7 +3,7 @@ layout: post
 title: RESTful admin controllers and views with Rails
 date: 2013-11-19 12:31:48
 comments: true
-categories: Rails
+categories: code
 ---
 有没有给Rails程序开发过后台管理系统？我觉得最差的选择就是给公共页面和管理后台采用同一个controller。刚开始，这样做或许很自然。我这意思是，假如有一个“books”资源，把所有与books相关的方法都放到同一个controller是很符合逻辑的吧？但是，不管是否符合逻辑，我建议永远不要这样做，因为程序将马上变得一团糟。
 

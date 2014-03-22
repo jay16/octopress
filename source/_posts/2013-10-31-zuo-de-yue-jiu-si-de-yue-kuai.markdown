@@ -3,7 +3,7 @@ layout: post
 title: 坐得越久 死得越快
 date: 2013-10-31 15:24:16
 comments: true
-categories: 程序猿,杂谈
+categories: other
 ---
 又一项研究显示，久坐对你的健康是真的、真的、真的非常有害。请买一个可站着工作的桌子吧！
 

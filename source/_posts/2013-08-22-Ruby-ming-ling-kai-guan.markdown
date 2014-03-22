@@ -3,7 +3,7 @@ layout: post
 title: Ruby 命令开关
 date: 2013-08-22 05:39:08
 comments: true
-categories: Ruby
+categories: code
 ---
 **Ruby**表示**语言**,**ruby**表示**解释器。**
 

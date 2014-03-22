@@ -3,7 +3,7 @@ layout: post
 title: ruby 作为脚本执行
 date: 2013-08-22 05:39:07
 comments: true
-categories: Ruby,Programming Ruby 2nd
+categories: code
 ---
 > 查看ruby路径
 

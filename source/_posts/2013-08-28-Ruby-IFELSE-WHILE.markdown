@@ -3,7 +3,7 @@ layout: post
 title: Ruby - IF..ELSE & WHILE
 date: 2013-08-28 06:43:32
 comments: true
-categories: Ruby
+categories: code
 ---
 ## if..else & unless
 

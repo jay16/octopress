@@ -3,7 +3,7 @@ layout: post
 title: 59条幽默但又真实的编程语录
 date: 2014-01-22 14:27:01
 comments: true
-categories: 程序猿,杂谈,名言
+categories: other
 ---
 ## 程序员编程语录
 

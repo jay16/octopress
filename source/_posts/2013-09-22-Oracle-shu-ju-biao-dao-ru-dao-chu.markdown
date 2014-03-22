@@ -3,7 +3,7 @@ layout: post
 title: Oracle - 数据表导入&导出
 date: 2013-09-22 14:14:47
 comments: true
-categories: Oracle
+categories: database
 ---
 ## 概述
 

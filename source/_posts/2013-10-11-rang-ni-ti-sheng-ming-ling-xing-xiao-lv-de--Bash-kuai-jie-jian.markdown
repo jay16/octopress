@@ -3,7 +3,7 @@ layout: post
 title: 让你提升命令行效率的 Bash 快捷键
 date: 2013-10-11 16:56:18
 comments: true
-categories: Linux,Shell
+categories: linux
 ---
 ## 查看`bash`版本
 

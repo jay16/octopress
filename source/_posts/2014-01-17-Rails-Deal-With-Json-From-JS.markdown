@@ -3,7 +3,7 @@ layout: post
 title: Rails处理JS传入的JSON字符串
 date: 2014-01-17 13:29:16
 comments: true
-categories: Ruby,json,ajax,JavaScript,Rails
+categories: code
 ---
 ## 场景再现
 

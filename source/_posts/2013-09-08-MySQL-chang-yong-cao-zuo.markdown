@@ -3,7 +3,7 @@ layout: post
 title: MySQL 常用操作
 date: 2013-09-08 13:10:06
 comments: true
-categories: MySql
+categories: database
 ---
 ## 备份&还原
 

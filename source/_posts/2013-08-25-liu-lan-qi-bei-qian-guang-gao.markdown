@@ -3,7 +3,7 @@ layout: post
 title: 浏览器被嵌广告
 date: 2013-08-25 15:33:35
 comments: true
-categories: 
+categories: other
 ---
 ## 起因
 

@@ -3,7 +3,7 @@ layout: post
 title: 初用CoffeeScript
 date: 2013-09-12 08:15:08
 comments: true
-categories: 
+categories: other
 ---
 ## 系统环境
 

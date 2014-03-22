@@ -3,7 +3,7 @@ layout: post
 title: Rails 错误 - ActionNotFound & assets
 date: 2013-08-24 17:14:52
 comments: true
-categories: Error,Rails
+categories: error
 ---
 ## 错误描述
 

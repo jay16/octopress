@@ -3,7 +3,7 @@ layout: post
 title: Ruby on Rack
 date: 2013-12-01 20:01:31
 comments: true
-categories: Ruby
+categories: code
 ---
 ## Rack介绍
 

@@ -3,7 +3,7 @@ layout: post
 title: linux常见格式解压集合
 date: 2013-09-16 12:18:22
 comments: true
-categories: Linux
+categories: linux
 ---
 ## 常见格式
 

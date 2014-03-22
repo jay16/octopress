@@ -3,7 +3,7 @@ layout: post
 title: oracle sqlplus - rlwrap
 date: 2013-10-26 18:14:27
 comments: true
-categories: Oracle,rlwrap,sqlplus
+categories: database
 ---
 ## 事情起因
 

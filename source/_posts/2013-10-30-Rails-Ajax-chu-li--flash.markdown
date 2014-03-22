@@ -3,7 +3,7 @@ layout: post
 title: Rails Ajax 处理 flash
 date: 2013-10-30 00:13:06
 comments: true
-categories: Rails,ajax
+categories: code
 ---
 ## 困惑
 

@@ -3,7 +3,7 @@ layout: post
 title: FocusMail API - Java测试代码
 date: 2013-08-24 16:42:37
 comments: true
-categories: 
+categories: other
 ---
 ## 代码功能
 

@@ -3,7 +3,7 @@ layout: post
 title: Linux.x64 Oracle安装
 date: 2013-09-21 23:51:11
 comments: true
-categories: 
+categories: other
 ---
 ## 安装JDK
 

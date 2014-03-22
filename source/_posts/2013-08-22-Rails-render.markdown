@@ -3,7 +3,7 @@ layout: post
 title: Rails  - render
 date: 2013-08-22 05:39:07
 comments: true
-categories: Rails,render,locals,layout
+categories: code
 ---
 >render模板时传入参数
 

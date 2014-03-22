@@ -3,7 +3,7 @@ layout: post
 title: webmail mailgate克隆
 date: 2013-08-22 05:39:07
 comments: true
-categories: Ruby
+categories: code
 ---
     #encoding: utf-8
     require 'fileutils'

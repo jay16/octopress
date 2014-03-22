@@ -3,7 +3,7 @@ layout: post
 title: "kramdown代码语法转换成markdown"
 date: 2014-03-21 16:33:12 -0400
 comments: true
-categories: kramdown,markdown
+categories: code
 ---
 
 

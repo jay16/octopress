@@ -3,7 +3,7 @@ layout: post
 title: Ruby - 判断Rails.root
 date: 2013-09-02 02:55:32
 comments: true
-categories: Ruby,const_defined?
+categories: code
 ---
   Rails的部分功能代码使用ruby调试时，一些宏定义会报错，需判断一下
 

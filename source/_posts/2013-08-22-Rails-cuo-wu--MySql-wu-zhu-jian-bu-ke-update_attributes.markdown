@@ -3,7 +3,7 @@ layout: post
 title: Rails 错误 - MySql 无主键不可update_attributes
 date: 2013-08-22 05:39:09
 comments: true
-categories: Ruby,Error,Rails,MySql
+categories: error
 ---
 ## 起因
 

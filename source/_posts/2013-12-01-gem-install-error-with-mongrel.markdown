@@ -3,7 +3,7 @@ layout: post
 title: gem error - mongrel 安装失败
 date: 2013-12-01 12:09:30
 comments: true
-categories: Gem,Ruby
+categories: code
 ---
 
 ## 概念

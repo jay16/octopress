@@ -3,7 +3,7 @@ layout: post
 title: Ruby Mail - bodyhtml & bodytext
 date: 2013-08-28 03:26:59
 comments: true
-categories: Ruby,Email
+categories: code
 ---
     [webmail@cloud sh]$ cat /home/webmail/jay/rb/mail_attach.rb 
     #encoding: utf-8

@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 图表内部记录函数
 date: 2013-08-23 07:02:38
 comments: true
-categories: qlikview
+categories: report
 ---
 > 这些函数只可用于图表表达式中。
 

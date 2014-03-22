@@ -3,7 +3,7 @@ layout: post
 title: Linux 防火墙配置
 date: 2013-09-25 22:38:17
 comments: true
-categories: CentOS,iptables
+categories: linux
 ---
 ## 认识防火墙
 

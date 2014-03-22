@@ -3,7 +3,7 @@ layout: post
 title: 别的程序员是怎么读你的简历的
 date: 2013-09-23 16:03:51
 comments: true
-categories: 
+categories: other
 ---
 ## 起源
 

@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 脚本控制语句
 date: 2013-08-23 08:30:08
 comments: true
-categories: BI,Qlikview
+categories: report
 ---
 > QlikView 脚本由许多语句组成。一个语句可以为常规脚本语句和关键字(第217 页)或脚本控制语句。
 

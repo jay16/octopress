@@ -3,7 +3,7 @@ layout: post
 title: ruby 中的dollar - $
 date: 2013-09-09 15:47:22
 comments: true
-categories: $,Ruby
+categories: code
 ---
 ## 正则匹配三剑客
 

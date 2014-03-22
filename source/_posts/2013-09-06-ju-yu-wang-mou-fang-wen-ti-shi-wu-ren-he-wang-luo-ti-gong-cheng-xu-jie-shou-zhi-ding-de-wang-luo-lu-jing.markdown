@@ -3,7 +3,7 @@ layout: post
 title: 局域网某访问提示“无任何网络提供程序接受指定的网络路径”
 date: 2013-09-06 02:57:55
 comments: true
-categories: 
+categories: other
 ---
 ## 描述
 

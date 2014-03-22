@@ -3,7 +3,7 @@ layout: post
 title: Rails 错误 - SECURITY WARNING
 date: 2013-09-24 11:47:20
 comments: true
-categories: Rails,Error
+categories: error
 ---
 ## 描述
 
