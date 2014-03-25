@@ -3,7 +3,7 @@ layout: post
 title: "Pygments can't parse unknown language: ruby"
 date: 2014-03-25 08:32:08 -0400
 comments: true
-categories: error
+categories: [octopress,error]
 ---
 
 在Octopress上写了篇文章，执行发布命令`bundle exec rake generate`时，出现如下报错：
