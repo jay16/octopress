@@ -3,7 +3,7 @@ layout: post
 title: 每天工作4小时的程序员
 date: 2013-10-31 14:55:14
 comments: true
-categories: other
+categories: [mac]
 ---
 每个人都熟悉这种作息规律：早上9点去上班，坐在电脑前面，编一天的程序，下午5点下班回家。如今，非常感谢蒂莫西·费里斯 (Timothy Ferriss)的《每周工作4小时》，我开始重新思考应该如何工作，如何让自己变成更有效率的程序员。
 

@@ -3,7 +3,7 @@ layout: post
 title: VMWare Error - *.vmx not valid 
 date: 2013-09-01 06:01:04
 comments: true
-categories: error
+categories: [error,cognos,mac,html]
 ---
 ## 版本
 

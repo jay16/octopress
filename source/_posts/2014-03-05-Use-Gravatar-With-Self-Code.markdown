@@ -3,7 +3,7 @@ layout: post
 title: 使用自己的代码调用gravatar头像
 date: 2014-03-05 17:06:06
 comments: true
-categories: code
+categories: [error,ruby,android,java]
 ---
 在写android应用时，需要调用gravatar头像，在网上找了代码，在此备忘一下。
 

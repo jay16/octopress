@@ -3,7 +3,7 @@ layout: post
 title: PL/SQL Developer ERROR - 中文乱码
 date: 2013-12-11 14:20:45
 comments: true
-categories: error
+categories: [error,oracle,plsql,html]
 ---
 ## 现象描述:
 

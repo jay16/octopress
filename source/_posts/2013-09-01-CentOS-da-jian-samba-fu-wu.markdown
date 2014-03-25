@@ -3,7 +3,7 @@ layout: post
 title: CentOS - 搭建samba服务
 date: 2013-09-01 06:28:59
 comments: true
-categories: linux
+categories: [bash,bi,centos,linux,vim,html]
 ---
     1.1
     #需要root权限 

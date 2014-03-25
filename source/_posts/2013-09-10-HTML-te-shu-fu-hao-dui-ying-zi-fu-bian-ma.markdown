@@ -3,7 +3,7 @@ layout: post
 title: HTML特殊符号对应字符编码
 date: 2013-09-10 06:34:24
 comments: true
-categories: web
+categories: [markdown,mac,html]
 ---
 ## 特殊符号字符编码表
 

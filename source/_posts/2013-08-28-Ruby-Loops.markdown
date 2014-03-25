@@ -3,7 +3,7 @@ layout: post
 title: Ruby - Loops
 date: 2013-08-28 06:28:23
 comments: true
-categories: code
+categories: [ruby]
 ---
 ## while
 

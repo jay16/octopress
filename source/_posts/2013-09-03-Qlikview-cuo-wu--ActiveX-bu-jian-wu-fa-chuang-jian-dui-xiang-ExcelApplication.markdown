@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 错误 - ActiveX部件无法创建对象 -"Excel.Application“
 date: 2013-09-03 09:52:13
 comments: true
-categories: error
+categories: [error,qlikview,mac]
 ---
 ## 描述
 

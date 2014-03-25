@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 数据结构
 date: 2013-08-27 06:01:45
 comments: true
-categories: report
+categories: [qlikview]
 ---
 ## 数据加载语句
 

@@ -3,7 +3,7 @@ layout: post
 title: rails error - 重复提交
 date: 2013-12-08 23:16:02
 comments: true
-categories: other
+categories: [error,rails,jquery]
 ---
 ## 现场再现
 

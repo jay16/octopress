@@ -3,7 +3,7 @@ layout: post
 title: PowerDesigner - 远程连接Oracle配置
 date: 2013-09-06 07:00:55
 comments: true
-categories: error
+categories: [oracle,database,html]
 ---
 ## 数据库连接
 

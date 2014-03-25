@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 常用函数
 date: 2014-02-19 10:40:52
 comments: true
-categories: report
+categories: [qlikview,bi,oracle]
 ---
 + total分组汇总，相当于group by
 

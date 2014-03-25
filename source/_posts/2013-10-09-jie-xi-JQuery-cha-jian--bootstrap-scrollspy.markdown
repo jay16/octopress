@@ -3,7 +3,7 @@ layout: post
 title: 解析JQuery插件 - bootstrap scrollspy
 date: 2013-10-09 23:59:28
 comments: true
-categories: other
+categories: [java,bi,html,jquery,css,bootstrap]
 ---
 ## 代码框架
 

@@ -3,7 +3,7 @@ layout: post
 title: 博文中写公式 - LaTeX & MathJS
 date: 2013-12-10 12:36:06
 comments: true
-categories: web
+categories: [kramdown,java,html]
 ---
 ## 使用方法
 

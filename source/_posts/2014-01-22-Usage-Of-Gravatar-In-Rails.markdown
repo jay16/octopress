@@ -3,7 +3,7 @@ layout: post
 title: rails中使用gravatar头像
 date: 2014-01-22 15:59:31
 comments: true
-categories: code
+categories: [ruby,rails]
 ---
  Gravatar是Globally Recognized Avatar的缩写,是gravatar推出的一项服务，意为“全球通用头像”。如果在Gravatar的服务器上放置了你自己的头像，那么在任何支持 Gravatar的blog或者留言本上留言时，只要提供你与这个头像关联的email地址，就能够显示出你的Gravatar头像来。
 

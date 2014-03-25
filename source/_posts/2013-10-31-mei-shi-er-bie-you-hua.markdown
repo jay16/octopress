@@ -3,7 +3,7 @@ layout: post
 title: 没事儿别优化
 date: 2013-10-31 17:04:13
 comments: true
-categories: other
+categories: [java]
 ---
 事实上**你应该优化，但要在正确的地方，有足够的理由**。我待会儿再聊这个。
 

@@ -3,7 +3,7 @@ layout: post
 title: "Octopress使用[友言]作为评论"
 date: 2014-03-25 08:00:44 -0400
 comments: true
-categories:  web
+categories: [ruby,octopress,java,html,disqus,uyan]
 ---
 
 在Octopress中默认的评论系统是Disqus,打开配置文件_config.yml搜索disqus可看到相关代码，只是没有启用。

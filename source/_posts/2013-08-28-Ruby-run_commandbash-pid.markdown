@@ -3,7 +3,7 @@ layout: post
 title: Ruby - run_command(bash) & pid
 date: 2013-08-28 03:51:57
 comments: true
-categories: code
+categories: [error,ruby,bash,bi]
 ---
 ## run_command
 

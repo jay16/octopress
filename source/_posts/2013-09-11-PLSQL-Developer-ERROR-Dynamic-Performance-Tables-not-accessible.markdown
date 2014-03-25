@@ -3,7 +3,7 @@ layout: post
 title: PL/SQL Developer ERROR - Dynamic Performance Tables not accessible
 date: 2013-09-11 01:43:07
 comments: true
-categories: database
+categories: [error,oracle]
 ---
 ## 现象描述
 

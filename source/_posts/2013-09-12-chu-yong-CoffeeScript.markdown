@@ -3,7 +3,7 @@ layout: post
 title: 初用CoffeeScript
 date: 2013-09-12 08:15:08
 comments: true
-categories: other
+categories: [ruby,rails,python,java,bi,centos,linux,html,jquery]
 ---
 ## 系统环境
 

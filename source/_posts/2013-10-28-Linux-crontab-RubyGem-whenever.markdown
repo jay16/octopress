@@ -3,7 +3,7 @@ layout: post
 title: Linux - crontab & RubyGem - whenever
 date: 2013-10-28 23:23:59
 comments: true
-categories: code
+categories: [ruby,linux]
 ---
 ## crontab
 

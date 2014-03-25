@@ -3,7 +3,7 @@ layout: post
 title: Linux 修改swap大小
 date: 2013-09-21 21:38:43
 comments: true
-categories: linux
+categories: [bi,oracle,linux]
 ---
 ## 修改步骤
 

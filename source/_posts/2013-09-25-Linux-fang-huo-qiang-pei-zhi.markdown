@@ -3,7 +3,7 @@ layout: post
 title: Linux 防火墙配置
 date: 2013-09-25 22:38:17
 comments: true
-categories: linux
+categories: [bash,bi,centos,linux,mac]
 ---
 ## 认识防火墙
 

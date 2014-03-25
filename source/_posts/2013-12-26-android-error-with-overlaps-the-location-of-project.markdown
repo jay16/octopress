@@ -3,7 +3,7 @@ layout: post
 title: android error -  overlaps the location 
 date: 2013-12-26 23:45:34
 comments: true
-categories: other
+categories: [error,android]
 ---
 ## 现场再现
 

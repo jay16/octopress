@@ -3,7 +3,7 @@ layout: post
 title: tar - time stamp is in the future
 date: 2013-08-26 09:11:14
 comments: true
-categories: linux
+categories: [other]
 ---
 ## 报错原因 
 

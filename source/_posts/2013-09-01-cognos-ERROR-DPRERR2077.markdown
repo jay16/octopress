@@ -3,7 +3,7 @@ layout: post
 title: cognos ERROR - DPR-ERR-2077
 date: 2013-09-01 06:31:28
 comments: true
-categories: error
+categories: [error,report,cognos,database]
 ---
 ## 报错
 

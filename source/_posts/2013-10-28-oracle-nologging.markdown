@@ -3,7 +3,7 @@ layout: post
 title: oracle - nologging
 date: 2013-10-28 16:07:47
 comments: true
-categories: database
+categories: [bi,oracle,database,html]
 ---
 Nologging只在很少情况下生效.通常,DML操作总是要生成redo的.
 

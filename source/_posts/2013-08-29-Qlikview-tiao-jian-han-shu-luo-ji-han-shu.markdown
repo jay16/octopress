@@ -3,7 +3,7 @@ layout: post
 title: Qlikview 条件函数 & 逻辑函数
 date: 2013-08-29 09:12:20
 comments: true
-categories: report
+categories: [qlikview,bi]
 ---
 # 条件函数
 

@@ -3,7 +3,7 @@ layout: post
 title: ruby 脚本操作 oracle
 date: 2013-08-22 05:39:09
 comments: true
-categories: code
+categories: [error,ruby,bash,bi,oracle,html]
 ---
 ## bash操作ruby
 

@@ -3,7 +3,7 @@ layout: post
 title: Centos 修改时区时间
 date: 2013-12-19 10:04:19
 comments: true
-categories: linux
+categories: [bash,bi,oracle,centos]
 ---
 ## 系统信息
 

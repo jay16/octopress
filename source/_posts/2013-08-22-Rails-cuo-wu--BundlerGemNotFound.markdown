@@ -3,7 +3,7 @@ layout: post
 title: Rails 错误 -  Bundler - -GemNotFound
 date: 2013-08-22 05:39:08
 comments: true
-categories: error
+categories: [error,ruby,rails]
 ---
 > passenger start启动后报错:
 

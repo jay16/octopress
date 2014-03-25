@@ -3,7 +3,7 @@ layout: post
 title: Rails model - many to many
 date: 2013-08-29 08:35:20
 comments: true
-categories: code
+categories: [rails]
 ---
 ## 苦头
 

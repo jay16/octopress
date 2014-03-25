@@ -3,7 +3,7 @@ layout: post
 title: Oracle - decode nvl sign
 date: 2013-09-05 09:26:54
 comments: true
-categories: database
+categories: [oracle,html]
 ---
 ## SIGN
 

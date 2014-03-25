@@ -3,7 +3,7 @@ layout: post
 title: Ruby 错误汇总
 date: 2013-11-21 09:55:13
 comments: true
-categories: error
+categories: [error,ruby,bi,report,kettle,oracle,linux]
 ---
 
 ## Encoding

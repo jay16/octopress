@@ -3,7 +3,7 @@ layout: post
 title: Oracle - 左右、上下全连接
 date: 2013-09-06 08:30:30
 comments: true
-categories: database
+categories: [oracle]
 ---
 ## 概述
 

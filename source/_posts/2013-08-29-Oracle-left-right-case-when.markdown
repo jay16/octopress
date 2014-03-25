@@ -3,7 +3,7 @@ layout: post
 title: Oracle - left & right & case when
 date: 2013-08-29 07:12:49
 comments: true
-categories: database
+categories: [oracle,html]
 ---
 ## left & right
 

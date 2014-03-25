@@ -3,7 +3,7 @@ layout: post
 title: VIM 默认位置配置
 date: 2013-08-22 05:39:07
 comments: true
-categories: linux
+categories: [vim]
 ---
 自动启动的命令写在`$HOME/.exrc `(如果是vi)或者`$HOME/.vimrc`(如果是vim)
 

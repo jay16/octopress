@@ -3,7 +3,7 @@ layout: post
 title: nginx 浏览器[连接重置]
 date: 2013-12-09 10:03:16
 comments: true
-categories: code
+categories: [error,html,nginx]
 ---
 
 ## 上下文环境

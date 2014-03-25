@@ -3,7 +3,7 @@ layout: post
 title: Rails 错误 - 中文入库乱码
 date: 2013-08-24 17:24:08
 comments: true
-categories: error
+categories: [rails,mysql,database]
 ---
 ## 描述
 

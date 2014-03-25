@@ -3,7 +3,7 @@ layout: post
 title: Ruby on Rails创始人DHH：架构是将复杂的问题简单化
 date: 2013-11-14 14:11:00
 comments: true
-categories: code
+categories: [ruby,rails,java]
 ---
 他的数学成绩很糟糕，曾不只一次的得过F；他并不算聪明，21岁才进入哥本哈根商学院就读本科学位；他做过游戏网站的记者，还与人合伙开过公司；在20岁以前，他没写过一行程序代码。
 

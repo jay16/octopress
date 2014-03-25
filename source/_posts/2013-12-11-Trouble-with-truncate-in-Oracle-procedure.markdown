@@ -3,7 +3,7 @@ layout: post
 title: Oracle储存过程中使用truncate报错
 date: 2013-12-11 14:04:09
 comments: true
-categories: other
+categories: [error,oracle]
 ---
 ## 案发现场
 

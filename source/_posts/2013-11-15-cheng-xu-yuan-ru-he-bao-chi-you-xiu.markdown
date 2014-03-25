@@ -3,7 +3,7 @@ layout: post
 title: 程序员如何保持优秀
 date: 2013-11-15 17:27:25
 comments: true
-categories: other
+categories: [other]
 ---
 1. 小范围的选择一些有用技术，透彻的学习它们，拥抱它们。然后不断的扩展这个范围。
 

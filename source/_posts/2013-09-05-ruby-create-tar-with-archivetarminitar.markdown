@@ -3,7 +3,7 @@ layout: post
 title: ruby - create tar with archive-tar-minitar
 date: 2013-09-05 09:33:36
 comments: true
-categories: other
+categories: [ruby]
 ---
 ## gem
 

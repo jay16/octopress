@@ -3,7 +3,7 @@ layout: post
 title: Linux - 查看系统信息
 date: 2013-09-08 07:35:29
 comments: true
-categories: linux
+categories: [bi,centos,linux,mac,html]
 ---
 ## 系统内核
 

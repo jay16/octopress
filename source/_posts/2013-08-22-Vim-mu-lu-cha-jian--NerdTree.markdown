@@ -3,7 +3,7 @@ layout: post
 title: Vim目录插件 NerdTree
 date: 2013-08-22 05:39:07
 comments: true
-categories: linux
+categories: [centos,linux,vim]
 ---
     [root@localhost .vim]# cat /etc/issue
     CentOS release 5.9 (Final)

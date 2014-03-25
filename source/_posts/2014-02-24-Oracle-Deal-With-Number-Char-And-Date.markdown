@@ -3,7 +3,7 @@ layout: post
 title: Oracle 处理Number,Char,Date的关联
 date: 2014-02-24 12:35:07
 comments: true
-categories: database
+categories: [oracle]
 ---
 ## 需求
 

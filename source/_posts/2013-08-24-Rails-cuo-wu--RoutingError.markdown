@@ -3,7 +3,7 @@ layout: post
 title: Rails 错误 - RoutingError
 date: 2013-08-24 17:43:01
 comments: true
-categories: error
+categories: [error,ruby,rails,css,bootstrap]
 ---
 ## 报错描述
 

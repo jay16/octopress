@@ -3,7 +3,7 @@ layout: post
 title: 标签云 - windstagball
 date: 2013-08-24 17:04:07
 comments: true
-categories: other
+categories: [java,html,jquery,css]
 ---
 ## 新发现
 

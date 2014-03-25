@@ -3,7 +3,7 @@ layout: post
 title: Linux shell 学习
 date: 2013-09-19 04:49:13
 comments: true
-categories: other
+categories: [error,bash,bi,linux]
 ---
 ## 默认变量
 

@@ -3,7 +3,7 @@ layout: post
 title: Rails学习 - rails启动
 date: 2013-08-28 14:45:47
 comments: true
-categories: code
+categories: [error,ruby,rails,bash,bi,database,linux]
 ---
 ## 查看rails执行项
 
