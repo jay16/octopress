@@ -81,16 +81,6 @@ default_asides: [custom/asides/about_me.html,asides/recent_posts.html,custom/asi
 5.更新octopress样式并发布
 
 ``` bash
-[root@solife octopress]# bundle exec rake update_source
-## Removed existing source.old directory
-rm -r source.old
-mkdir source.old
-cp -r source/. source.old
-## Copied source into source.old/
-cp -r --remove-destination .themes/classic/source/. source
-cp -r --remove-destination source.old/_includes/custom/. source/_includes/custom/
-cp source.old/favicon.png source
-## Updated source ##
 [root@solife octopress]# bundle exec rake generate
 ## Generating Site with Jekyll
 overwrite source/stylesheets/screen.css
