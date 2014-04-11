@@ -3,7 +3,7 @@ layout: post
 title: "ruby中的星号*"
 date: 2014-04-06 14:03:14 +0800
 comments: true
-categories: ruby
+categories: [ruby]
 ---
 
 
@@ -22,7 +22,7 @@ categories: ruby
 3. String * Integer
 
 ``` ruby
-  "hello" * 2 # => "hellohello"
+  “hello” * 2 # => “hellohello"
 ```
 
 4. Array作为参数传入时的前缀
