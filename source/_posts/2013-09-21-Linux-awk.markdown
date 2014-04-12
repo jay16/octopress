@@ -1,0 +1,566 @@
+---
+layout: post
+title: Linux awk
+date: 2013-09-21 18:42:01
+comments: true
+categories: [error,bash,bi,linux,html]
+---
+## 内置变量
+
+awk是个优秀文本处理工具，可以说是一门程序设计语言。下面是awk内置变量。
+
+| 属性 | 说明  |
+|:------:|-------|
+| &#36;0 | 当前记录（作为单个变量） 
+| &#36;1~&#36;n | 当前记录的第n个字段，字段间由FS分隔 |
+| FS | 输入字段分隔符 默认是空格 
+| NF | 当前记录中的字段个数，就是有多少列 |
+| NR | 已经读出的记录数，就是行号，从1开始 
+| RS | 输入的记录他隔符默 认为换行符 |
+| OFS | 输出字段分隔符 默认也是空格 
+| ORS | 输出的记录分隔符，默认为换行符 |
+| ARGC | 命令行参数个数 
+| ARGV| 命令行参数数组 |
+| FILENAME | 当前输入文件的名字 
+| IGNORECASE | 如果为真，则进行忽略大小写的匹配 |
+| ARGIND | 当前被处理文件的ARGV标志符
+| CONVFMT | 数字转换格式 %.6g
+| ENVIRON | UNIX环境变量
+| ERRNO | UNIX系统错误消息
+| FIELDWIDTHS | 输入字段宽度的空白分隔字符串
+| FNR | 当前记录数
+| OFMT | 数字的输出格式 %.6g
+| RSTART | 被匹配函数匹配的字符串首
+| RLENGTH | 被匹配函数匹配的字符串长度
+| SUBSEP | \034 |
+
+### 实例说明
+
+1.查看`/etc/passwd`密码文件中`root`用户信息
+
+    [root@allentest ~]# awk '/^root/{print $0}' /etc/passwd 
+    root:x:0:0:root:/root:/bin/bash
+    #/^root/ => 匹配行首以root开头
+    #$0       => 打印匹配所有行
+    #/etc/passwd => 被匹配的内容
+    #更直观的写法
+    [root@allentest ~]# cat /etc/passwd | awk '/^root/{print $0}'
+    root:x:0:0:root:/root:/bin/bash
+
+2.设置字段分隔符号(FS使用方法）
+
+    [root@allentest ~]# awk 'BEGIN{FS=":"}/^root/{print $1,$NF}' /etc/passwd
+    root /bin/bash
+    #FS => 字段分隔符，默认是空格，passwd里面是':'分隔，所以需要修改默认分隔符。
+    #NF => 字段分隔后总数
+    #$0 => 代表当前行记录
+    #$1-$n => 是当前行，各个字段对应值
+    #BEGIN => 预设
+
+3.显示所在行
+
+    [root@allentest ~]# awk 'BEGIN{FS=":"}{print NR,$1,$NF}' /etc/passwd
+    1 root /bin/bash
+    2 bin /sbin/nologin
+    3 daemon /sbin/nologin
+    #NR => 记录所在行数
+
+4.设置输出字段分隔符（OFS使用方法) 
+
+    [root@allentest ~]# awk 'BEGIN{FS=":";OFS="^^"}/^root/{print FNR,$1,$NF}' /etc/passwd
+    1^^root^^/bin/bash
+    #OFS => 设置字段分隔符; 默认为空格
+
+5.设置输出行记录分隔符(ORS使用方法）
+
+    [root@allentest ~]# awk 'BEGIN{FS=":";ORS="^^"}{print FNR,$1,$NF}' /etc/passwd 
+    1 root /bin/bash^^2 bin /sbin/nologin^^3 daemon /sbin/nologin^^4 adm 
+    #ORS => 设置换行符，这里修改为：”^^”，所有行之间用”^^”分隔
+
+6.输入参数获取(ARGC ,ARGV使用)
+
+    [root@allentest ~]# awk 'BEGIN{FS=":";print "ARGC="ARGC;for(k in ARGV) {print k"="ARGV[k]; }}'
+    ARGC=1
+    0=awk
+    #ARGC => 所有输入参数个数
+    #ARGV => 获得输入参数内容，是一个数组。
+    #awk命令就是参数
+
+7.获得传入的文件名(FILENAME使用)
+
+    [root@allentest ~]#  awk 'BEGIN{FS=":";print FILENAME}{print FILENAME}' /etc/passwd
+    /etc/passwd
+    /etc/passwd
+    #=> FILENAME,$0-$N,NF 不能使用在BEGIN中，BEGIN中不能获得任何与文件记录操作的变量。
+
+8.获得linux环境变量（ENVIRON使用）
+
+    [root@allentest ~]# awk 'BEGIN{print ENVIRON["PATH"];}' 
+    /root/.rbenv/shims:/root/.rbenv/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin
+
+9.输出数据格式设置：(OFMT使用） 
+
+    [root@allentest ~]# awk 'BEGIN{OFMT="%.3f";print 2/3,123.11111111;}'
+    0.667 123.111
+    #=>OFMT默认输出格式是：%.6g 保留六位小数，这里修改OFMT会修改默认数据输出格式。
+
+10.按宽度指定分隔符（FIELDWIDTHS使用）
+
+    [root@allentest ~]# echo 20100117054932 | awk 'BEGIN{FIELDWIDTHS="4 2 2 2 2 3"}{print $1"-"$2"-"$3,$4":"$5":"$6}'
+    2010-01-17 05:49:32
+    #=> FIELDWIDTHS其格式为空格分隔的一串数字，用以对记录进行域的分隔，
+    #=> FIELDWIDTHS="4 2 2 2 2 2"就表示$1宽度是4，$2是2，$3是2  .... 。
+    #=> 这个时候会忽略：FS分隔符。
+
+11.RSTART RLENGTH使用
+
+    [root@allentest ~]# awk 'BEGIN{start=match("this is a test",/[a-z]+$/); print start, RSTART, RLENGTH }'
+    11 11 4
+    [root@allentest ~]# awk 'BEGIN{start=match("this is a test",/^[a-z]+$/); print start, RSTART, RLENGTH }'
+    0 0 -1
+    #=> RSTART 被匹配正则表达式首位置，RLENGTH 匹配字符长度，没有找到为-1.
+    [root@allentest ~]# awk 'BEGIN{start=match("this is a testt aaaaa bbbbb",/[a-z]+$/); print start, RSTART, RLENGTH }'
+    23 23 5
+    #=> 匹配出来的竟然是bbbb而非aaaa
+
+12.awk的默认分隔符是连续的空白字符
+
+    [root@allentest ~]# echo "a bb  ccc   dddd" | awk '{ for( i=1; i<=NF; i++) {print $i,length($i);}}'
+    a 1
+    bb 2
+    ccc 3
+    dddd 4
+
+## 控件语句
+
+在`linux awk`的 `while`、`do-while`和`for`语句中允许使用`break`,`continue`语句来控制流程走向，也允许使用`exit`这样的语句来退出。`break`中断当前正在执行的循环并跳到循环外执行下一条语句。
+
+`if` 是流程选择用法。
+
+`awk`中，流程控制语句，语法结构，与c语言类型。
+
+`awk`流程控制语句，从语法上面大家可以看到，与c语言是一样的。有了这些语句，其实很多shell程序都可以交给awk，而且性能是非常快的。
+
+| 关键字 | 说明 |
+|----|----|
+| break | 当 break 语句用于 while 或 for 语句时，导致退出程序循环。|
+| continue | 当 continue 语句用于 while 或 for 语句时，使程序循环移动到下一个迭代。|
+| next | 能够导致读入下一个输入行，并返回到脚本的顶部。这可以避免对当前输入行执行其他的操作过程。|
+| exit | 语句使主输入循环退出并将控制转移到END,如果END存在的话。如果没有定义END规则，或在END中应用exit语句，则终止脚本的执行。|
+
+### if .. else
+
+    [root@allentest sh]# cat awk_if.sh 
+    #!/bin/bash
+    awk 'BEGIN{
+    test=100;
+    if(test>90)
+    {
+        print "very good"; #每条命令语句后面可以用“；”号结尾。
+    }
+    else if(test>60)
+    {
+        print "good";
+    }
+    else
+    {
+        print "no pass";
+    }
+    }'
+    [root@allentest sh]# sh awk_if.sh 
+    very good
+
+### while
+
+    [root@allentest sh]# cat awk_while.sh 
+    awk 'BEGIN{
+    test=100;
+    total=0;
+    while(i<=test)
+    {
+        total+=i;
+        i++;
+    }
+    print total;
+    }'
+    [root@allentest sh]# sh awk_while.sh 
+    5050
+
+### for
+
+    [root@allentest sh]# cat awk_for.sh 
+    awk 'BEGIN{
+        for(k in ENVIRON)
+        {
+            print k"="ENVIRON[k];
+        }
+    }'
+    [root@allentest sh]# sh awk_for.sh 
+    AWKPATH=.:/usr/share/awk
+    LANG=zh_CN.UTF-8
+    HISTSIZE=1000
+    CVS_RSH=ssh
+    USER=root
+    SHELL=/bin/bash
+    
+    [root@allentest sh]# cat awk_for.sh 
+    awk 'BEGIN{
+        total=0;
+        for(i=0;i<=100;i++)
+        {
+            total+=i;
+        }
+        print total;
+    }'
+    [root@allentest sh]# sh awk_for.sh 
+    5050
+
+说明：ENVIRON 是awk常量，是子典型数组
+
+### do..while
+
+    [root@allentest sh]# cat awk_do.sh 
+    awk 'BEGIN{
+        total=0;
+        i=0;
+        do
+        {
+            total+=i;
+            i++;
+        }while(i<=100)
+        print total;
+    }'
+    [root@allentest sh]# sh awk_do.sh 
+    5050
+
+### 性能比较
+
+    [root@allentest sh]# time (awk 'BEGIN{ total=0;for(i=0;i<=10000;i++){total+=i;}print total;}')
+    50005000
+    
+    real    0m0.133s
+    user    0m0.001s
+    sys     0m0.001s
+    [root@allentest sh]# time(total=0;for i in $(seq 10000);do total=$(($total+i));done;echo $total;)
+    50005000
+    
+    real    0m0.191s
+    user    0m0.103s
+    sys     0m0.011s
+
+很明显:**awk在效率上完胜shell**
+
+## 获得外部变量
+
+可以把`awk`看作一门完全的程序设计语言，它处理文本的速度是快得惊人的。现在很多基于shell 日志分析工具都可以用它完成
+
+    [root@allentest sh]# echo 'awk code' | awk 'BEGIN{print "start\n============="}{print $0}END{print "=========\nend"}'
+    start
+    =============
+    awk code
+    =========
+    end
+    
+    # 直观点
+    [root@allentest sh]# cat awk_out.sh 
+    echo 'awk code' |  \
+    awk '              \
+      BEGIN            \
+        { print "start\n=============" } \
+        { print $0 }                     \
+      END                                \
+        {print "=========\nend"}'     
+    [root@allentest sh]# sh awk_out.sh 
+    start
+    =============
+    awk code
+    =========
+    end
+
+在`awk`中两个特别的表达式，BEGIN和END，这两者都可用于pattern中（参考前面的awk语法），提供BEGIN和END的作用是**给程序赋予初始状态和在程序结束之后执行一些扫尾的工作**。
+
+任何在BEGIN之后列出的操作（在{}内）将在awk开始扫描输入之前执行，而END之后列出的操作将在扫描完全部的输入之后执行。因此，通常**使用BEGIN来显示变量和预置（初始化）变量，使用END来输出最终结果**。 
+
++ 1.获取外部变量方法一
+
+> 格式如：`awk '{action}' 变量名=变量值` （这样传入变量，可以在action中获得值。)
+
+注意：**变量名与值放到’{action}’后面。**
+
+    [root@allentest sh]# out="hello world"
+    [root@allentest sh]# echo | awk  '{print test}' test="$out"
+    hello world
+
++ 2.获取外部变量方法二
+
+> 格式如：`awk –v 变量名=变量值 [–v 变量2=值2 …] 'BEGIN{action}'`
+
+注意：**用-v传入变量可以在action中都可以获得到，但顺序在action前面**。
+
+    #这种变量在BEGIN的action不能获得。
+    [root@allentest sh]# echo | awk  'BEGIN{print test}' test="$out"
+    -bash: echo: write error: 断开的管道
+    #下面的可以
+    [root@allentest sh]# echo | awk -v test="$out"  'BEGIN{print test}'
+    hello world
+    [root@allentest sh]# echo | awk -v test="$out"  '{print test}'
+    hello world
+
++ 3.获得环境变量
+
+`awk`内置变量`ENVIRON`,就可以直接获得环境变量。它是一个字典数组。环境变量名就是它的键值。
+
+    [root@allentest sh]# awk 'BEGIN{for (i in ENVIRON) {print i"="ENVIRON[i];}}'
+    AWKPATH=.:/usr/share/awk
+    OLDPWD=/root
+    LANG=zh_CN.UTF-8
+    HISTSIZE=1000
+    CVS_RSH=ssh
+    USER=root
+
+## 内置函数
+
+awk内置函数主要分3种类似：算数函数、字符串函数、其它一般函数、时间函数。
+
+ 
+### 一、算术函数:
+
+以下算术函数执行与 C 语言中名称相同的子例程相同的操作：
+
+
+| 函数名 | 说明 |
+|--------|------|
+| atan2( y, x ) | 返回 y/x 的反正切 |
+| cos( x ) | 返回 x 的余弦；x 是弧度
+| sin( x ) | 返回 x 的正弦；x 是弧度
+| exp( x ) | 返回 x 幂函数 
+| log( x ) | 返回 x 的自然对数
+| sqrt( x ) | 返回 x 平方根
+| int( x ) | 返回 x 的截断至整数的值。
+| rand( ) | 返回任意数字 n，其中 0 <= n < 1。
+| srand([Expr]) | 将 rand 函数的种子值设置为 Expr 参数的值，或如果省略 Expr 参数则使用某天的时间。返回先前的种子值。
+
+获得随机数：
+
+    [root@allentest sh]# awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
+    19
+    [root@allentest sh]# awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
+    88
+
+调用算术函数：
+
+    [root@allentest sh]# cat awk_f.sh 
+    awk 'BEGIN{      \
+        OFMT="%.3f"; \
+        fs=sin(1);   print "sin(1)="fs;\
+        fe=exp(10);  print "exp(10)="fe;\
+        fl=log(10);  print "log(10)="fl;\
+        fi=int(3.1415); print "int(3.1415)="fi;\
+    }'
+    [root@allentest sh]# sh awk_f.sh 
+    sin(1)=0.841471
+    exp(10)=22026.5
+    log(10)=2.30259
+    int(3.1415)=3
+    #OFMT 设置输出数据格式是保留3位小数
+
+### 二、字符串函数
+
+| 函数 | 说明 |
+|-----|------|
+| gsub(Ere,Repl,[In])	| 除了正则表达式所有具体值被替代这点，它和 sub 函数完全一样地执行，。
+| sub(Ere,Repl, [In]) | 用 Repl 参数指定的字符串替换 In 参数指定的字符串中的由 Ere 参数指定的扩展正则表达式的第一个具体值。sub 函数返回替换的数量。出现在 Repl 参数指定的字符串中的 &（和符号）由 In 参数指定的与 Ere 参数的指定的扩展正则表达式匹配的字符串替换。如果未指定 In 参数，缺省值是整个记录（$0 记录变量）。
+| index(String1,String2) | 在由 String1 参数指定的字符串（其中有出现 String2 指定的参数）中，返回位置，从 1 开始编号。如果 String2 参数不在 String1 参数中出现，则返回 0（零）。
+| length [(String)] | 返回 String 参数指定的字符串的长度（字符形式）。如果未给出 String 参数，则返回整个记录的长度（$0 记录变量）。
+| blength [(String)] | 返回 String 参数指定的字符串的长度（以字节为单位）。如果未给出 String 参数，则返回整个记录的长度（$0 记录变量）。
+| substr(String,M,[N]) | 返回具有 N 参数指定的字符数量子串。子串从 String 参数指定的字符串取得，其字符以 M 参数指定的位置开始。M 参数指定为将 String 参数中的第一个字符作为编号 1。如果未指定 N 参数，则子串的长度将是 M 参数指定的位置到 String 参数的末尾 的长度。
+| match(String,Ere) | 在 String 参数指定的字符串（Ere 参数指定的扩展正则表达式出现在其中）中返回位置（字符形式），从 1 开始编号，或如果 Ere 参数不出现，则返回 0（零）。RSTART 特殊变量设置为返回值。RLENGTH 特殊变量设置为匹配的字符串的长度，或如果未找到任何匹配，则设置为 -1（负一）。
+| split(String,A,[Ere]) | 将 String 参数指定的参数分割为数组元素 A[1], A[2], . . ., A[n]，并返回 n 变量的值。此分隔可以通过 Ere 参数指定的扩展正则表达式进行，或用当前字段分隔符（FS 特殊变量）来进行（如果没有给出 Ere 参数）。除非上下文指明特定的元素还应具有一个数字值，否则 A 数组中的元素用字符串值来创建。
+| tolower(String) | 返回 String 参数指定的字符串，字符串中每个大写字符将更改为小写。大写和小写的映射由当前语言环境的 LC_CTYPE 范畴定义。
+| toupper(String) | 返回 String 参数指定的字符串，字符串中每个小写字符将更改为大写。大写和小写的映射由当前语言环境的 LC_CTYPE 范畴定义。
+| sprintf(Format, Expr, Expr,..) | 根据 Format 参数指定的 printf 子例程格式字符串来格式化 Expr 参数指定的表达式并返回最后生成的字符串。
+
+实例: 在info中查找满足正则表达式，`/[0-9]+/` 用`!`替换，并且替换后的值，赋值给info 未给info值，默认是$0.
+
+    [root@allentest sh]# awk 'BEGIN{info="this is a test2010test!";gsub(/[0-9]+/,"!",info);print info}'   
+    this is a test!test!
+
+实例:查找字符串info中查看是否含'test'(index)
+
+    [root@allentest sh]# awk 'BEGIN{info="this is a test2010test!";print index(info,"test")?"ok":"no found";}'
+    ok
+
+实例:正则表达式匹配查找(match使用)
+
+    [root@allentest sh]# awk 'BEGIN{info="this is a test2010test!";print match(info,/[0-9]+/)?"ok":"no found";}'
+    ok
+
+实例:字符串分割(split使用)
+
+    [root@allentest sh]# awk 'BEGIN{info="this is a test";split(info,tA," ");print length(tA);for(k in tA){print k,tA[k];}}'
+    4
+    4 test
+    1 this
+    2 is
+    3 a
+
+注意:
+
+分割info,动态创建数组tA,这里比较有意思，`awk for …in`循环，是一个无序的循环。并不是从数组下标1…n ，因此使用时候需要注意。
+
+实例:截取字符串(substr使用）
+
+    [root@allentest sh]# awk 'BEGIN{info="this is a test2010test!";print substr(info,4,10);}'       
+    s is a tes
+
+
+实例: 格式化字符串输出（sprintf使用）
+
+其中格式化字符串包括两部分内容: 一部分是正常字符, 这些字符将按原样输出; 另一部分是格式化规定字符, 以"%"开始, 后跟一个或几个规定字符,用来确定输出内容格式。
+ 
+| 格式符 | 说明 | 格式符 | 说明 |
+|-----|-----|
+| %d  | 十进制有符号整数| %u | 十进制无符号整数
+| %f| 浮点数 | %s | 字符串
+| %c | 单个字符 | %p | 指针的值
+| %e | 指数形式的浮点数 | %x | 无符号以十六进制表示的整数
+| %o | 无符号以八进制表示的整数| %g | 自动选择合适的表示法 
+
+    [root@allentest sh]# awk 'BEGIN{n1=124.113;n2=-1.224;n3=1.2345; printf("%.2f,%.2u,%.2g,%X,%o\n",n1,n2,n3,n1,n1);}'
+    124.11,18446744073709551615,1.2,7C,174
+
+### 三、一般函数
+
+| 函数 | 说明
+|-------|------|
+| close(Expression) | 用同一个带字符串值的 Expression 参数来关闭由 print 或 printf 语句打开的或调用 getline 函数打开的文件或管道。
+| | 如果文件或管道成功关闭，则返回 0；其它情况下返回非零值。如果打算写一个文件，并稍后在同一个程序中读取文件，则 close 语句是必需的。
+| system(Command ) | 执行 Command 参数指定的命令，并返回退出状态。等同于 system 子例程。
+| getline [ Variable ] | 将 Variable 参数指定的变量设置为从当前输入文件读取的下一个输入记录。如果未指定 Variable 参数，则 $0 记录变量设置为该记录的值，还将设置 NF、NR 和 FNR 特殊变量。
+
+    [root@allentest sh]# awk 'BEGIN{while("cat /etc/passwd"|getline){print $0;};close("/etc/passwd");}'
+    root:x:0:0:root:/root:/bin/bash
+    bin:x:1:1:bin:/bin:/sbin/nologin
+
+    [root@allentest sh]# awk 'BEGIN{while(getline < "/etc/passwd"){print $0;};close("/etc/passwd");}'
+    root:x:0:0:root:/root:/bin/bash
+    bin:x:1:1:bin:/bin:/sbin/nologin
+
+    [root@allentest sh]# awk 'BEGIN{print "Enter your name:";getline name;print name;}'
+    Enter your name:
+    hello
+    hello
+
+    [root@allentest sh]# awk 'BEGIN{b=system("ls -al");print b;}'
+    总计 92
+    drwxr-sr-x 2 root    webuser  4096 09-20 17:03 .
+    drwsrwsrwt 6 webuser webuser  4096 09-17 23:30 ..
+    -rw-r--r-- 1 root    webuser   103 09-20 15:46 awk_do.sh
+    -rw-r--r-- 1 root    webuser   167 09-20 15:43 awk_for.sh
+    -rw-r--r-- 1 root    webuser   199 09-20 17:03 awk_f.sh
+
+### 四、时间函数
+
+ 
+| 函数名 | 说明
+|------|------|
+| mktime | 生成时间格式(YYYY MM DD HH MM SS[ DST])
+| strftime  | 格式化时间输出，将时间戳转为时间字符串([format[timestamp]])
+| systime() | 得到时间戳,返回从1970年1月1日开始到当前时间(不计闰年)的整秒数
+
+    [root@allentest sh]# awk 'BEGIN{tstamp=mktime("2013 09 19 19 09 19");print strftime("%c",tstamp);}'
+    2013年09月19日 星期四 19时09分19秒
+
+    [root@allentest sh]# awk 'BEGIN{tstamp1=mktime("2013 0 1 1 0 1");tstamp2=mktime("2013 09 19 19 09 1");print tstamp2-tstamp1;}'
+    25294140
+    [root@allentest sh]# awk 'BEGIN{tstamp1=mktime("2013 09 19 19 09 1");tstamp2=systime();print tstamp2-tstamp1;}' 
+    82177
+
+strftime日期和时间格式说明符：
+
+| 格式 | 描述 |
+|------|------|
+| %a  | 星期几的缩写(Sun)
+| %A | 星期几的完整写法(Sunday)
+| %b | 月名的缩写(Oct)
+|%B | 月名的完整写法(October)
+|%c | 本地日期和时间
+|%d | 十进制日期
+|%D | 日期 08/20/99
+|%e | 日期，如果只有一位会补上一个空格
+|%H | 用十进制表示24小时格式的小时
+|%I | 用十进制表示12小时格式的小时
+|%j | 从1月1日起一年中的第几天
+|%m | 十进制表示的月份
+|%M | 十进制表示的分钟
+|%p | 12小时表示法(AM/PM)
+|%S | 十进制表示的秒
+|%U | 十进制表示的一年中的第几个星期(星期天作为一个星期的开始)
+|%w | 十进制表示的星期几(星期天是0)
+|%W | 十进制表示的一年中的第几个星期(星期一作为一个星期的开始)
+|%x | 重新设置本地日期(08/20/99)
+|%X | 重新设置本地时间(12：00：00)
+|%y | 两位数字表示的年(99)
+|%Y | 当前月份
+|%Z | 时区(PDT)
+|%% |百分号(%)
+
+## 批量删除进程(实例)
+
+    #帮助说明
+    help() {
+        echo "usage:kp keyword username"
+        echo "   eg:kp resque  webmail"
+        exit 0
+    }
+    
+    #第一个参数为空,提示帮助说明
+    [ -z $1 ] && help
+    
+    keyword=$1
+       user=$2
+    
+    #第二个参数为空,设置默认用户webmail
+    [ -z $2 ] && user="webmail"
+    
+    
+    echo "keyword:${keyword} - user:${user}"
+    
+    id_str=$(ps axuw | grep ${keyword} |               \
+             grep -v grep |                            \
+             awk -v awk_user="${user}" 'BEGIN { -F" "}  \
+               {if($1==awk_user) printf("%s ",$2);}    \
+               END { }')
+    
+    id_ary=(${id_str})
+    id_num=${#id_ary[@]}
+    
+    echo "find ${id_num} result."
+    
+    #查找进程数量为0时直接退出
+    [ ${id_num} -eq 0 ] && exit 0
+    
+    ps axuw | grep ${keyword} | grep -v grep | awk -v awk_user="${user}" 'BEGIN{ -F" "}  { if($1==awk_user) printf("%s\n ", $0);}'
+    
+    echo -n "kill the above ${id_num} process?(y/n)"
+    read yn
+    
+    case ${yn} in
+    Y|y)
+       kill -9 ${id_str}
+       echo "kill over!"
+       ;;
+    N|n)
+       echo "do nothing"
+       ;;
+    *)
+       echo "do nothing"
+       ;;
+    esac
+
+## 转载
+
+1. [linux awk 内置变量使用介绍](http://www.cnblogs.com/chengmo/archive/2010/10/06/1844818.html)
+2. [linux shell awk 流程控制语句（if,for,while,do)详细介绍](http://www.cnblogs.com/chengmo/archive/2010/10/04/1842073.html)
+3. [linux shell awk获得外部变量（变量传值）简介](http://www.cnblogs.com/chengmo/archive/2010/10/03/1841753.html)
+4. [linux awk 内置函数详细介绍（实例）](http://www.cnblogs.com/chengmo/archive/2010/10/08/1845913.html)
