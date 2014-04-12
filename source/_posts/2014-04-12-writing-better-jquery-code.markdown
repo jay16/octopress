@@ -6,7 +6,6 @@ comments: true
 categories: 
 ---
 
-
 之前是在[推酷](http://www.tuicool.com/articles/MFR7fiA)看到本篇文章[高效 jquery 的奥秘](http://justjavac.com/javascript/2013/11/25/writing-better-jquery-code.html),有种认同感，还有种醍醐灌顶的感觉，之后就以它来规范自己的jqery代码，但脑子笨总有些东西记得模糊，所以转载到这里。
 
 好的代码会带来速度的提升。 快速渲染和响应意味着更好的用户体验。
